@@ -93,7 +93,7 @@ class Authentication extends Component {
                                         onChange={this.handlePassword} />
                                 </FormGroup>
                                 <Button className="default-button">Sign In</Button>
-                                <Link to="/home">Home Test</Link>
+                                <Link className="btn-action" to="/home">Dashboard Shortcut</Link>
                             </Form>
                         </div>
                     </Col>
