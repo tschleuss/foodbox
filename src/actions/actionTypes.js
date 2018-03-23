@@ -1,0 +1,12 @@
+/** Auth */
+
+export const USER_LOGGED_IN = 'USER_LOGGED_IN'
+
+/** Stores  */
+
+export const GET_STORES = 'GET_STORES'
+export const SEARCH_STORES = 'SEARCH_STORES'
+export const RECEIVE_STORES = 'RECEIVE_STORES'
+
+export const GET_STORE_PRODUCTS = 'GET_STORE_PRODUCTS'
+export const RECEIVE_STORE_PRODUCTS = 'RECEIVE_STORE_PRODUCTS'
