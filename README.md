@@ -28,3 +28,4 @@ In _FoodBox_ you can create boxes with a maximum value, and you can create many 
 ## Resources
 
 * Images obtained from https://www.pexels.com/
+* Inspired by http://skipthedishes.com/
