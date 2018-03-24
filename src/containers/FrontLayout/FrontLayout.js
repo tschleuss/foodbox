@@ -4,6 +4,7 @@ import { Route } from 'react-router'
 import { Link } from 'react-router-dom'
 import { Navbar } from 'reactstrap'
 import { APP_NAME } from '../../config/properties'
+import { ToastContainer } from 'react-toastify'
 import 'bootstrap/dist/css/bootstrap.css'
 
 const FrontLayout = ({ component: Component, ...rest }) =>
@@ -13,6 +14,11 @@ const FrontLayout = ({ component: Component, ...rest }) =>
                 <Link to="/" className="navbar-brand">{APP_NAME}</Link>
             </Navbar>
             <Component {...matchProps} />
+            <ToastContainer 
+                position="bottom-left" 
+                hideProgressBar={true} 
+                closeButton={false}
+                toastClassName="toast-container" />
         </div>
     )}>
     </Route>

@@ -22,7 +22,11 @@ const DefaultLayout = ({ component: Component, ...rest }) =>
                 <Component {...matchProps} />
             </div> 
             <footer><p></p></footer> 
-            <ToastContainer />
+            <ToastContainer 
+                position="bottom-left" 
+                hideProgressBar={true} 
+                closeButton={false}
+                toastClassName="toast-container" />
         </div>
     )}>
     </Route>
