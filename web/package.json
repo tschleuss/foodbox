@@ -35,6 +35,7 @@
     },
     "devDependencies": {
         "eslint": "^4.18.2",
+        "babel-eslint": "7",
         "eslint-loader": "^2.0.0",
         "eslint-plugin-import": "^2.9.0",
         "eslint-plugin-jsx-a11y": "^6.0.3",

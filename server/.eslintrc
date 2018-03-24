@@ -1,20 +1,14 @@
 {
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "parser": "babel-eslint",
     "env": {
         "node": true,
-        "es6": true,
-        "browser": true,
-        "mocha": true
+        "es6": true
     },
-    "plugins": [
-        "react"
-    ],
     "parserOptions": {
         "ecmaVersion": 2017,
         "sourceType": "module",
         "ecmaFeatures": {
             "modules": true,
-            "jsx": true,
             "experimentalObjectRestSpread": true
         }
     },
@@ -37,11 +31,17 @@
         "eqeqeq": ["error", "always"],
         "func-names": ["error", "never"],
         "valid-typeof": ["error"],
-        "no-console": ["error"],
         "strict": ["error", "safe"],
         "camelcase": ["error", { "properties": "always" }],
         "arrow-parens": ["error", "as-needed"],
         "object-shorthand": ["error", "always", { "avoidQuotes": true, "ignoreConstructors": true }],
-        "arrow-body-style": ["error", "as-needed"]
+        "arrow-body-style": ["error", "as-needed"],
+        "no-trailing-spaces": ["error", { "skipBlankLines": false, "ignoreComments": false }],
+        "max-len": ["error", { "code": 150, "comments": 150 }],
+        "complexity": ["error", { "max": 10 }],
+        "max-depth": ["error", { "max": 3 }],
+        "max-params": ["error", { "max": 7 }],
+        "no-debugger": ["error"],
+        "no-console": ["off"]
     }
 }
