@@ -19,7 +19,7 @@ In _FoodBox_ you can create boxes with a maximum value, and you can create many 
 ## To get started:
 
 * You must have `yarn` installed. 
-    * If you have npm, install yarn through `npm install -g yarn`. 
+    * If you have npm, install yarn through `npm i -g yarn`. 
     * If you are using a unix system, you should use `sudo` first.
 * install all project dependencies with `yarn install`
 * start the development server with `yarn start`
