@@ -67,7 +67,6 @@ class Authentication extends Component {
                                     <div className="form-button-container">
                                         <Button color="link" className="mbutton default raised">Sign In</Button>
                                     </div>
-                                    {/* <Link className="btn-action" to="/home">Dashboard Shortcut</Link> */}
                                 </Form>
                             </div>
                         </Col>

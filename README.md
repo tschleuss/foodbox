@@ -21,8 +21,10 @@ In _FoodBox_ you can create boxes with a maximum value, and you can create many 
 * You must have `yarn` installed. 
     * If you have npm, install yarn through `npm i -g yarn`. 
     * If you are using a unix system, you should use `sudo` first.
-* install all project dependencies with `yarn install`
+* install all projects dependencies with `yarn install`
+    * It may take some time since it will install all sub project's dependencies.
 * start the development server with `yarn start`
+    * It will start the web and server simultaneously
 
 ## Licensing
 

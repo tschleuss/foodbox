@@ -1,8 +1,5 @@
 import React from 'react'
 import { Container, Row, Col } from 'reactstrap'
-import { Navbar, Nav, NavItem } from 'reactstrap'
-import { Link } from 'react-router-dom'
-import { APP_NAME } from '../../config/properties'
 import StoreCard from '../../components/StoreCard'
 import FoodImages from '../../resources/images/foods'
 
