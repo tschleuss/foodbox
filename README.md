@@ -6,7 +6,7 @@ This is the _FoodBox_ project. A proof of concept project similar to Loot Boxes 
 
 In _FoodBox_ you can create boxes with a maximum value, and you can create many combinations with foods that you like from every available restaurants. When you get hungry, just purchase a closed box, and you will receive in your door a random box of food based on what you have previous choosed.
 
-> This is a **proof of concept** product that I'm doing to practice developing with ReactJS, it will not work actually if you run and order something, but feel free to use any source code here.
+> This is a **proof of concept** product that I'm doing to practice developing with ReactJS, it will not work as a final product yet. But feel free to use any source code from here.
 
 > This project was started after the SkipTheDishes / VanHack recruiting fair in São Paulo, base on my project that I did there.
 
