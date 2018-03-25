@@ -1,4 +1,5 @@
 {
+    "root": true,
     "parser": "babel-eslint",
     "extends": ["eslint:recommended", "plugin:react/recommended"],
     "env": {
@@ -32,7 +33,7 @@
         "no-undef": ["error"],
         "no-unreachable": ["error"],
         "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
-        "no-use-before-define": ["error", { "functions": false, "classes": false, "variables": true }],
+        "no-use-before-define": ["error", { "functions": false, "classes": false, "variables": false }],
         "constructor-super": ["error"],
         "curly": ["error", "all"],
         "eqeqeq": ["error", "always"],

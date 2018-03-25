@@ -18,6 +18,7 @@ In _FoodBox_ you can create boxes with a maximum value, and you can create many 
 
 ## To get started:
 
+* You must have `node` installed, version `v8.9.1` or above
 * You must have `yarn` installed. 
     * If you have npm, install yarn through `npm i -g yarn`. 
     * If you are using a unix system, you should use `sudo` first.
@@ -25,6 +26,10 @@ In _FoodBox_ you can create boxes with a maximum value, and you can create many 
     * It may take some time since it will install all sub project's dependencies.
 * start the development server with `yarn start`
     * It will start the web and server simultaneously
+
+## Mock data
+
+* You should be able to authenticate with `user@email.com` and `123456`
 
 ## Licensing
 

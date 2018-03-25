@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Container, Button, Form, FormGroup, Label, Input, Row, Col } from 'reactstrap'
-import { toast } from 'react-toastify'
 import { connect } from 'react-redux'
-import { userLoggedIn } from '../../actions/actionApi'
 import PropTypes from 'prop-types'
+import { userLoggedIn } from '../../actions/actionApi'
+import SecurityAPI from '../../services/api/Security'
+import Notification from '../../services/notification/NotificationService'
 
 class Authentication extends Component {
 
@@ -16,19 +17,26 @@ class Authentication extends Component {
 
     handleChange({ target }) {
         const { name, value } = target
-        this.setState({ [name]: value })
+        this.setState({
+            [name]: value
+        })
     }
 
-    handleSubmit(event) {
-        event.preventDefault()
-        const { onLoginSucceeded } = this.props
-        const { email, password } = this.state
-        if (email && password) {
-            // TODO Call API
-            onLoginSucceeded('<token>')
-            toast.success('You have signed in successfully!')
-        } else {
-            toast.error('Please, inform your email and password')
+    async handleSubmit(event) {
+        try {
+            event.preventDefault()
+            const { onLoginSucceeded } = this.props
+            const { email, password } = this.state
+            if (email && password) {
+                const { data } = await SecurityAPI.auth({ email, password })
+                const { token } = data
+                onLoginSucceeded(token)
+                Notification.toastSuccess('Success', 'You have signed in successfully!')
+            } else {
+                Notification.toastError('Error', 'Please, inform your email and password')
+            }
+        } catch (e) {
+            Notification.toastResponseException(e)
         }
     }
 
@@ -44,24 +52,24 @@ class Authentication extends Component {
                                 <Form onSubmit={this.handleSubmit} className="auth-form">
                                     <FormGroup>
                                         <Label for="examemailpleEmail">Email</Label>
-                                        <Input 
-                                            value={email} 
-                                            type="email" 
-                                            name="email" 
-                                            id="email" 
-                                            placeholder="Type your email" 
-                                            autoComplete="username" 
+                                        <Input
+                                            value={email}
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            placeholder="Type your email"
+                                            autoComplete="username"
                                             onChange={this.handleChange} />
                                     </FormGroup>
                                     <FormGroup>
                                         <Label for="password">Password</Label>
-                                        <Input 
-                                            value={password} 
-                                            type="password" 
-                                            name="password" 
-                                            id="password" 
-                                            placeholder="Type your password" 
-                                            autoComplete="current-password" 
+                                        <Input
+                                            value={password}
+                                            type="password"
+                                            name="password"
+                                            id="password"
+                                            placeholder="Type your password"
+                                            autoComplete="current-password"
                                             onChange={this.handleChange} />
                                     </FormGroup>
                                     <div className="form-button-container">

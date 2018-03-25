@@ -14,7 +14,7 @@ const BackgroundCard = ({ image, children, className }) => {
 BackgroundCard.propTypes = {
     image: PropTypes.string,
     children: PropTypes.any,
-    className: PropTypes.className
+    className: PropTypes.string
 }
 
 // TODO, I think that this component should not reference externar resouces

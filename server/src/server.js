@@ -1,16 +1,26 @@
-const express = require('express')
+const config = require('./helper/config.helper')
+const logger = require('./components/logger/logger.service')
+const app = require('./config/app')
 
-const app = express()
-const port = process.env.PORT || 5000
+const host = config.get('api.host')
+const port = config.get('api.port')
 
-app.get('/api/hello', (req, res) => {
-    res.send({ express: 'Hello From Express 3' })
+/**
+ * Start the server.
+ */
+const server = app.listen(port, host, error => {
+    if (error) {
+        logger.error('Unable to listen for connections', error)
+        process.exit(1)
+    }
+    logger.info(`Server listening on http://${host}:${port}`)
 })
 
-const server = app.listen(port, () => console.log(`Listening on port ${port}`))
-
+/**
+ * Perform some graceful shutdown.
+ */
 const shutDown = () => {
-    console.log('Received kill signal, shutting down gracefully')
+    logger.info('Received kill signal, shutting down gracefully')
     server.close(() => {
         process.exit(0)
     })

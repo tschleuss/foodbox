@@ -31,11 +31,11 @@ class SearchNav extends Component {
         const containerClass = classNames({ 'nav-search': true, [className]: true })
         return (
             <Navbar className={containerClass} color="faded" light expand="md">
-                <input 
-                    className="search-input" 
-                    type="text" 
-                    placeholder={placeholder} 
-                    value={value} 
+                <input
+                    className="search-input"
+                    type="text"
+                    placeholder={placeholder}
+                    value={value}
                     onChange={this.handleChange}
                     onKeyPress={this.handleKeyPress} />
             </Navbar>
