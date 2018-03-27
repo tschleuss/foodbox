@@ -13,6 +13,7 @@ const Welcome = () =>
                         <div className="welcome-actions">
                             <Link to='/signin' className="welcome-action">Sign In</Link>
                             <Link to='/signup' className="welcome-action">Sign Up</Link>
+                            <Link to="/home" className="welcome-action">Sample</Link>
                         </div>
                     </article>
                 </Col>

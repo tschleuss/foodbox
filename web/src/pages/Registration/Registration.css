@@ -24,7 +24,7 @@
     color: #fff;
 }
 
-.auth-section {
+.register-section {
     height: 552px;
     min-height: 100vh;
     padding-top: 60px;
@@ -34,7 +34,7 @@
     align-items: center;
 }
 
-.auth-container {
+.register-container {
     position: relative;
     overflow: hidden;
     background: #fff;
@@ -43,7 +43,7 @@
     box-shadow: 0 4px 5px -2px rgba(0, 0, 0, .2), 0 7px 10px 1px rgba(0, 0, 0, .14), 0 2px 16px 1px rgba(0, 0, 0, .12);
 }
 
-.auth-form {
+.register-form {
     color: #2d2d2de3;
     padding: 16px;
 }

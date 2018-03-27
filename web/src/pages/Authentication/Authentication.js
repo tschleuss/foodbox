@@ -5,12 +5,13 @@ import PropTypes from 'prop-types'
 import { userLoggedIn } from '../../actions/actionApi'
 import SecurityAPI from '../../services/api/Security'
 import Notification from '../../services/notification/NotificationService'
+import LoadingOverlay from '../../components/LoadingOverlay'
 
 class Authentication extends Component {
 
     constructor(props) {
         super(props)
-        this.state = { email: '', password: '' }
+        this.state = { email: '', password: '', loading: false }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
@@ -23,10 +24,15 @@ class Authentication extends Component {
     }
 
     async handleSubmit(event) {
+
         try {
+
             event.preventDefault()
+            this.setState({ loading: true })
+
             const { onLoginSucceeded } = this.props
             const { email, password } = this.state
+
             if (email && password) {
                 const { data } = await SecurityAPI.auth({ email, password })
                 const { token } = data
@@ -35,13 +41,16 @@ class Authentication extends Component {
             } else {
                 Notification.toastError('Error', 'Please, inform your email and password')
             }
+
         } catch (e) {
             Notification.toastResponseException(e)
+        } finally {
+            this.setState({ loading: false })
         }
     }
 
     render() {
-        const { email, password } = this.state
+        const { email, password, loading } = this.state
         return (
             <section className="auth-section">
                 <Container>
@@ -50,8 +59,9 @@ class Authentication extends Component {
                             <h5 className="form-title text-light">Access you account</h5>
                             <div className="auth-container">
                                 <Form onSubmit={this.handleSubmit} className="auth-form">
+                                    <LoadingOverlay color={'#7d7d7d'} active={loading} />
                                     <FormGroup>
-                                        <Label for="examemailpleEmail">Email</Label>
+                                        <Label for="email">Email</Label>
                                         <Input
                                             value={email}
                                             type="email"
@@ -89,10 +99,8 @@ Authentication.propTypes = {
     onLoginSucceeded: PropTypes.func.isRequired
 }
 
-const mapStateToProps = ({ authentication }) => ({})
-
 const mapDispatchToProps = dispatch => ({
     onLoginSucceeded: token => dispatch(userLoggedIn(token))
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Authentication)
+export default connect(null, mapDispatchToProps)(Authentication)

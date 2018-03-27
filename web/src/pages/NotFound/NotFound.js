@@ -12,7 +12,6 @@ const NotFound = () =>
                         <h2 className="text-light error-message-sm">Page not found!</h2>
                         <div className="error-actions">
                             <Link to='/' className="welcome-action">Home</Link>
-                            <Link to="/home" className="welcome-action">Dashboard Shortcut</Link>
                         </div>
                     </article>
                 </Col>
