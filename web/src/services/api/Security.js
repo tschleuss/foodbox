@@ -1,10 +1,10 @@
 import api from './Api'
 const path = '/security'
 
-const register = async ({ email, password, name, address }) =>
-    api.post(`${path}`, { email, password, name, address })
+const signin = async (email, password) =>
+    api.post(`${path}/signin`, { email, password })
 
-const auth = async ({ email, password }) =>
-    api.post(`${path}/auth`, { email, password })
+const signup = async data =>
+    api.post(`${path}/signup`, data)
 
-export default { register, auth }
+export default { signin, signup }

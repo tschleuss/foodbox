@@ -14,9 +14,9 @@ const FrontLayout = ({ component: Component, ...rest }) =>
                 <Link to="/" className="navbar-brand">{APP_NAME}</Link>
             </Navbar>
             <Component {...matchProps} />
-            <ToastContainer 
-                position="bottom-left" 
-                hideProgressBar={true} 
+            <ToastContainer
+                position="bottom-left"
+                hideProgressBar={true}
                 closeButton={false}
                 toastClassName="toast-container" />
         </div>

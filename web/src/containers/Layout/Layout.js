@@ -21,10 +21,10 @@ const DefaultLayout = ({ component: Component, ...rest }) =>
             <div className="app-content">
                 <Component {...matchProps} />
             </div> 
-            <footer><p></p></footer> 
-            <ToastContainer 
-                position="bottom-left" 
-                hideProgressBar={true} 
+            <footer><p></p></footer>
+            <ToastContainer
+                position="bottom-left"
+                hideProgressBar={true}
                 closeButton={false}
                 toastClassName="toast-container" />
         </div>
